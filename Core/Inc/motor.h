@@ -2,6 +2,7 @@
 #define MOTOR_H
 
 #include "stm32f4xx_hal.h"
+#include "main.h"
 #include "encoder.h"
 #include "pid.h"
 
@@ -17,6 +18,9 @@ typedef struct {
     PID_t             *pid;             // PID controller for this motor
     float              target_rpm;      // desired speed (RPM)
 } Motor_t;
+
+extern Motor_t motor1;
+extern Motor_t motor2;
 
 void Motor_Init(void);
 void Motor_SetTargetRPM(Motor_t *motor, float rpm);     // PID speed control
