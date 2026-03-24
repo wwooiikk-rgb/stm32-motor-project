@@ -1,0 +1,18 @@
+# STM32CubeIDE build output
+Debug/
+Release/
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+
+# CubeIDE settings (optional: remove if you want to share IDE settings)
+.settings/
+.cproject
+.project
+
+# macOS
+.DS_Store
