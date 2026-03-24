@@ -98,11 +98,21 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  const float test_rpm[]   = { 50.0f, 150.0f, 250.0f, 0.0f };
+  const uint8_t step_count = sizeof(test_rpm) / sizeof(test_rpm[0]);
+  uint8_t step = 0;
+
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    Motor_SetTargetRPM(&motor1, test_rpm[step]);
+    Motor_SetTargetRPM(&motor2, test_rpm[step]);
+
+    HAL_Delay(3000);
+
+    step = (step + 1) % step_count;
   }
   /* USER CODE END 3 */
 }
